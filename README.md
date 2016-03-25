@@ -6,16 +6,11 @@ LinkedIn Page: https://www.linkedin.com/in/andrea-prosseda-2b8651116?trk=hp-iden
 Email: andreaprosseda@gmail.com
 
 
-Student at La Sapienza - University of Rome
-http://www.uniroma1.it
+Student at La Sapienza - University of Rome http://www.uniroma1.it
 
-Master of Science in Engineering in Computer Science
+Master of Science in Engineering in Computer Science http://cclii.dis.uniroma1.it/?q=en/msecs
 
-http://cclii.dis.uniroma1.it/?q=en/msecs
-
-Department of DIAG
-
-http://www.diag.uniroma1.it
+Department of DIAG http://www.diag.uniroma1.it
 
 
 Project done for the course of Pervasive Systems 
