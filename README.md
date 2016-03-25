@@ -13,6 +13,8 @@ Master of Science in Engineering in Computer Science http://cclii.dis.uniroma1.i
 Department of DIAG http://www.diag.uniroma1.it
 
 
+
+
 Project done for the course of Pervasive Systems 
 
 Professor Ioannis Chatzigiannakis
