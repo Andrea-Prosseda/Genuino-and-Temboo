@@ -2,9 +2,7 @@
 
 The project is done for the course of Pervasive Systems 
 
-Professor Ioannis Chatzigiannakis
-
-http://ichatz.me/index.php/Site/PervasiveSystems2016
+Professor Ioannis Chatzigiannakis: http://ichatz.me/index.php/Site/PervasiveSystems2016
 
 
 SlideShare Presentation: http://www.slideshare.net/AndreaProsseda/temboo
