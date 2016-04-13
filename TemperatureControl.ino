@@ -6,9 +6,16 @@
 #include <EthernetClient.h>
 #include <Temboo.h>
 
-#define TEMBOO_ACCOUNT "andreaprosseda"
-#define TEMBOO_APP_KEY_NAME "myFirstApp"
-#define TEMBOO_APP_KEY "9pDetNgcA7WLFO7LiuBjLRAmLBK1KGiT"
+#define TEMBOO_ACCOUNT "____"           //complete these parameters
+#define TEMBOO_APP_KEY_NAME "____"
+#define TEMBOO_APP_KEY "____"
+#define DropboxAppSecret "___"          //developer credentials of Dropbox
+#define DropboxAppKey "___"
+#define AuthToken "___"                 //developer credentials of Twilio
+#define AccountSID "___"  
+#define SMSFromNumber "___"
+#define SMSToNumber "___"
+
 
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
 IPAddress ip(192, 168, 0, 177);
@@ -165,8 +172,8 @@ void initializeDropboxAuth(){
   InitializeOAuthChoreo.setAccountName(TEMBOO_ACCOUNT);
   InitializeOAuthChoreo.setAppKeyName(TEMBOO_APP_KEY_NAME);
   InitializeOAuthChoreo.setAppKey(TEMBOO_APP_KEY);
-  InitializeOAuthChoreo.addInput("DropboxAppSecret", "36178f0jsm2hc0p");
-  InitializeOAuthChoreo.addInput("DropboxAppKey", "hg1msq51mnm6kki");
+  InitializeOAuthChoreo.addInput("DropboxAppSecret", DropboxAppSecret);
+  InitializeOAuthChoreo.addInput("DropboxAppKey", DropboxAppKey);
   InitializeOAuthChoreo.setChoreo("/Library/Dropbox/OAuth/InitializeOAuth");
 
   unsigned int returnCode = InitializeOAuthChoreo.run();
@@ -205,11 +212,11 @@ void authSMS(){
   SendSMSChoreo.setAppKeyName(TEMBOO_APP_KEY_NAME);
   SendSMSChoreo.setAppKey(TEMBOO_APP_KEY);
   
-  SendSMSChoreo.addInput("AuthToken", "c0f7568825700c5c15789c53064895f5");
-  SendSMSChoreo.addInput("To", "+393332083641");
-  SendSMSChoreo.addInput("From", "+33644608448");
+  SendSMSChoreo.addInput("AuthToken", AuthToken);
+  SendSMSChoreo.addInput("To", SMSToNumber);
+  SendSMSChoreo.addInput("From", SMSFromNumber);
   SendSMSChoreo.addInput("Body", Authorization_URL);
-  SendSMSChoreo.addInput("AccountSID", "ACf093a9db9ebe98da67db9a7e43a59814");      
+  SendSMSChoreo.addInput("AccountSID", AccountSID);      
   SendSMSChoreo.setChoreo("/Library/Twilio/SMSMessages/SendSMS");
   
   SendSMSChoreo.run();                                              
@@ -224,8 +231,8 @@ void finalizeDropboxAuth(){
   FinalizeOAuthChoreo.setAccountName(TEMBOO_ACCOUNT);
   FinalizeOAuthChoreo.setAppKeyName(TEMBOO_APP_KEY_NAME);
   FinalizeOAuthChoreo.setAppKey(TEMBOO_APP_KEY);
-  FinalizeOAuthChoreo.addInput("DropboxAppSecret", "36178f0jsm2hc0p");
-  FinalizeOAuthChoreo.addInput("DropboxAppKey", "hg1msq51mnm6kki");
+  FinalizeOAuthChoreo.addInput("DropboxAppSecret", DropboxAppSecret);
+  FinalizeOAuthChoreo.addInput("DropboxAppKey", DropboxAppKey);
   FinalizeOAuthChoreo.addInput("OAuthTokenSecret", OAuth_Token_Secret);
   FinalizeOAuthChoreo.addInput("CallbackID", Callback_ID);
   FinalizeOAuthChoreo.setChoreo("/Library/Dropbox/OAuth/FinalizeOAuth");
@@ -425,9 +432,9 @@ void uploadFileInDropbox(){
   UploadFileChoreo.addInput("AccessTokenSecret", Access_Token_Secret);
   UploadFileChoreo.addInput("AccessToken", Access_Token);
   UploadFileChoreo.addInput("FileContents", message);
-  UploadFileChoreo.addInput("AppKey", "hg1msq51mnm6kki");
+  UploadFileChoreo.addInput("AppKey", DropboxAppKey);
   UploadFileChoreo.addInput("FileName", nomefile);
-  UploadFileChoreo.addInput("AppSecret", "36178f0jsm2hc0p");
+  UploadFileChoreo.addInput("AppSecret", DropboxAppSecret);
   UploadFileChoreo.setChoreo("/Library/Dropbox/FilesAndMetadata/UploadFile");
   
   UploadFileChoreo.run();
